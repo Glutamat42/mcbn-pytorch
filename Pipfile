@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+torch = "==1.10.2"
+numpy = "==1.22.2"
+matplotlib = "==3.5.1"
+pandas = "==1.4.1"
+torchvision = "==0.11.3"
+tqdm = "==4.62.3"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
