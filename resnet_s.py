@@ -12,7 +12,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 taken from https://github.com/akamaster/pytorch_resnet_cifar10
 """
 
-
 '''
 Properly implemented ResNet-s for CIFAR10 as described in paper [1].
 
