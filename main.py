@@ -23,7 +23,7 @@ from resnet_s import resnet32
 dataset = 'cifar10'
 lr = 0.1
 min_lr = 0.0001
-epochs = 10
+epochs = 200
 batchsize = 32
 mcbn_iters = 128
 mcbn_test_sample_count = 10000  # mcbn evaluation is extremely slow, reducing the sample count can speed it up
@@ -83,33 +83,34 @@ def evaluate():
     return correct / total
 
 
-_bn_std_var_buffer = []
+
 
 
 def get_bn_params(eval_model):
-    if len(_bn_std_var_buffer) == 0:
-        print("collect bn parameters for each train batch")
+    _bn_std_var_buffer = []
 
-        # set batchnorm layer to per mini batch mode
+    print("collect bn parameters for each train batch")
+
+    # set batchnorm layer to per mini batch mode
+    for name, module in eval_model.named_modules():
+        if 'bn' in name:
+            module.train()
+            module.reset_running_stats()
+            module.momentum = 1.  # only one batch is processed, and it should have full impact on "tracked" values
+
+    mcbn_train_dataloader = DataLoader(train_loader.dataset, batch_size=batchsize, shuffle=True, num_workers=8, drop_last=True)
+    for batch_idx, (train_input, train_target) in enumerate(tqdm(mcbn_train_dataloader)):
+        train_input = train_input.cuda()
+        eval_model(train_input)
+
+        bn_params = []
         for name, module in eval_model.named_modules():
             if 'bn' in name:
-                module.train()
+                bn_params.append(copy.deepcopy((module.running_mean, module.running_var)))
                 module.reset_running_stats()
-                module.momentum = 1.  # only one batch is processed, and it should have full impact on "tracked" values
+        _bn_std_var_buffer.append(bn_params)
 
-        mcbn_train_dataloader = DataLoader(train_loader.dataset, batch_size=batchsize, shuffle=True, num_workers=8, drop_last=True)
-        for batch_idx, (train_input, train_target) in enumerate(tqdm(mcbn_train_dataloader)):
-            train_input = train_input.cuda()
-            eval_model(train_input)
-
-            bn_params = []
-            for name, module in eval_model.named_modules():
-                if 'bn' in name:
-                    bn_params.append(copy.deepcopy((module.running_mean, module.running_var)))
-                    module.reset_running_stats()
-            _bn_std_var_buffer.append(bn_params)
-
-        eval_model.eval()
+    eval_model.eval()
 
     return _bn_std_var_buffer
 
