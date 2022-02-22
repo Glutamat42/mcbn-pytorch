@@ -1,0 +1,938 @@
+ResNet(
+  (conv1): Conv2d(3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (layer1): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+    (2): BasicBlock(
+      (conv1): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+    (3): BasicBlock(
+      (conv1): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+    (4): BasicBlock(
+      (conv1): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer2): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(16, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): LambdaLayer()
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+    (2): BasicBlock(
+      (conv1): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+    (3): BasicBlock(
+      (conv1): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+    (4): BasicBlock(
+      (conv1): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(32, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): LambdaLayer()
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+    (2): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+    (3): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+    (4): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (linear): Linear(in_features=64, out_features=10, bias=True)
+)
+Files already downloaded and verified
+Files already downloaded and verified
+100%|██████████| 1562/1562 [00:33<00:00, 46.54it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.12it/s]
+[1/200] train_acc:  42.68%, test_acc:  59.71%, avg NLL:  1.14 lr:  0.0100
+100%|██████████| 1562/1562 [00:33<00:00, 46.58it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.21it/s]
+[2/200] train_acc:  61.82%, test_acc:  64.03%, avg NLL:  1.04 lr:  0.0099
+100%|██████████| 1562/1562 [00:33<00:00, 46.59it/s]
+100%|██████████| 312/312 [00:02<00:00, 137.28it/s]
+[3/200] train_acc:  69.43%, test_acc:  71.68%, avg NLL:  0.81 lr:  0.0099
+100%|██████████| 1562/1562 [00:32<00:00, 47.82it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.27it/s]
+[4/200] train_acc:  73.73%, test_acc:  71.97%, avg NLL:  0.84 lr:  0.0098
+100%|██████████| 1562/1562 [00:33<00:00, 46.78it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.81it/s]
+[5/200] train_acc:  76.43%, test_acc:  77.95%, avg NLL:  0.65 lr:  0.0098
+100%|██████████| 1562/1562 [00:33<00:00, 47.20it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.61it/s]
+[6/200] train_acc:  78.55%, test_acc:  78.36%, avg NLL:  0.67 lr:  0.0097
+100%|██████████| 1562/1562 [00:33<00:00, 46.27it/s]
+100%|██████████| 312/312 [00:02<00:00, 123.30it/s]
+[7/200] train_acc:  80.09%, test_acc:  80.01%, avg NLL:  0.59 lr:  0.0097
+100%|██████████| 1562/1562 [00:33<00:00, 46.85it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.59it/s]
+[8/200] train_acc:  81.25%, test_acc:  80.96%, avg NLL:  0.56 lr:  0.0096
+100%|██████████| 1562/1562 [00:33<00:00, 47.01it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.62it/s]
+[9/200] train_acc:  82.21%, test_acc:  81.73%, avg NLL:  0.55 lr:  0.0096
+100%|██████████| 1562/1562 [00:33<00:00, 46.90it/s]
+100%|██████████| 312/312 [00:02<00:00, 135.56it/s]
+[10/200] train_acc:  83.05%, test_acc:  78.24%, avg NLL:  0.65 lr:  0.0095
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:20<00:00, 77.11it/s]
+100%|█████████▉| 311/312 [03:02<00:00,  1.70it/s]
+mcbn_iters: 1: tp:  81.76%, NLL sum:  5359.08, NLL avg:  0.54, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  82.01%, NLL sum:  5107.80, NLL avg:  0.51, CRPS:  0.04, gaussian NLL expected class:  144.14 gaussian NLL over all classes:  10.86
+mcbn_iters: 4: tp:  82.40%, NLL sum:  4995.15, NLL avg:  0.50, CRPS:  0.04, gaussian NLL expected class:  33.21 gaussian NLL over all classes: -0.31
+mcbn_iters: 8: tp:  82.66%, NLL sum:  4925.44, NLL avg:  0.49, CRPS:  0.04, gaussian NLL expected class:  10.42 gaussian NLL over all classes: -2.64
+mcbn_iters: 16: tp:  82.59%, NLL sum:  4897.64, NLL avg:  0.49, CRPS:  0.04, gaussian NLL expected class:  10.55 gaussian NLL over all classes: -2.62
+mcbn_iters: 32: tp:  82.70%, NLL sum:  4879.95, NLL avg:  0.49, CRPS:  0.04, gaussian NLL expected class:  9.20 gaussian NLL over all classes: -2.70
+mcbn_iters: 64: tp:  82.67%, NLL sum:  4875.64, NLL avg:  0.49, CRPS:  0.04, gaussian NLL expected class:  7.66 gaussian NLL over all classes: -2.88
+mcbn_iters: 128: tp:  82.68%, NLL sum:  4876.60, NLL avg:  0.49, CRPS:  0.04, gaussian NLL expected class:  6.06 gaussian NLL over all classes: -3.00
+100%|██████████| 1562/1562 [00:33<00:00, 47.19it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.20it/s]
+[11/200] train_acc:  84.04%, test_acc:  82.11%, avg NLL:  0.54 lr:  0.0095
+100%|██████████| 1562/1562 [00:33<00:00, 47.29it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.47it/s]
+[12/200] train_acc:  84.71%, test_acc:  81.18%, avg NLL:  0.56 lr:  0.0094
+100%|██████████| 1562/1562 [00:33<00:00, 47.30it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.08it/s]
+[13/200] train_acc:  85.11%, test_acc:  83.16%, avg NLL:  0.51 lr:  0.0094
+100%|██████████| 1562/1562 [00:33<00:00, 46.42it/s]
+100%|██████████| 312/312 [00:02<00:00, 135.25it/s]
+[14/200] train_acc:  85.76%, test_acc:  83.66%, avg NLL:  0.48 lr:  0.0093
+100%|██████████| 1562/1562 [00:32<00:00, 47.54it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.57it/s]
+[15/200] train_acc:  86.14%, test_acc:  84.53%, avg NLL:  0.46 lr:  0.0093
+100%|██████████| 1562/1562 [00:33<00:00, 46.96it/s]
+100%|██████████| 312/312 [00:02<00:00, 135.60it/s]
+[16/200] train_acc:  86.59%, test_acc:  84.33%, avg NLL:  0.47 lr:  0.0092
+100%|██████████| 1562/1562 [00:33<00:00, 47.18it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.65it/s]
+[17/200] train_acc:  87.03%, test_acc:  85.03%, avg NLL:  0.45 lr:  0.0092
+100%|██████████| 1562/1562 [00:33<00:00, 47.25it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.71it/s]
+[18/200] train_acc:  87.60%, test_acc:  81.38%, avg NLL:  0.58 lr:  0.0091
+100%|██████████| 1562/1562 [00:33<00:00, 46.85it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.37it/s]
+[19/200] train_acc:  87.56%, test_acc:  84.25%, avg NLL:  0.47 lr:  0.0091
+100%|██████████| 1562/1562 [00:33<00:00, 46.93it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.55it/s]
+[20/200] train_acc:  88.02%, test_acc:  84.85%, avg NLL:  0.47 lr:  0.0090
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:20<00:00, 77.69it/s]
+100%|█████████▉| 311/312 [03:01<00:00,  1.71it/s]
+mcbn_iters: 1: tp:  85.27%, NLL sum:  4556.73, NLL avg:  0.46, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  85.81%, NLL sum:  4327.43, NLL avg:  0.43, CRPS:  0.03, gaussian NLL expected class:  241.91 gaussian NLL over all classes:  31.09
+mcbn_iters: 4: tp:  86.12%, NLL sum:  4229.54, NLL avg:  0.42, CRPS:  0.03, gaussian NLL expected class:  16.55 gaussian NLL over all classes: -2.35
+mcbn_iters: 8: tp:  86.18%, NLL sum:  4163.41, NLL avg:  0.42, CRPS:  0.03, gaussian NLL expected class:  7.76 gaussian NLL over all classes: -3.27
+mcbn_iters: 16: tp:  86.32%, NLL sum:  4134.13, NLL avg:  0.41, CRPS:  0.03, gaussian NLL expected class:  4.76 gaussian NLL over all classes: -3.57
+mcbn_iters: 32: tp:  86.37%, NLL sum:  4111.17, NLL avg:  0.41, CRPS:  0.03, gaussian NLL expected class:  4.39 gaussian NLL over all classes: -3.58
+mcbn_iters: 64: tp:  86.34%, NLL sum:  4099.35, NLL avg:  0.41, CRPS:  0.03, gaussian NLL expected class:  3.38 gaussian NLL over all classes: -3.66
+mcbn_iters: 128: tp:  86.26%, NLL sum:  4096.33, NLL avg:  0.41, CRPS:  0.03, gaussian NLL expected class:  3.50 gaussian NLL over all classes: -3.63
+100%|██████████| 1562/1562 [00:32<00:00, 47.47it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.20it/s]
+[21/200] train_acc:  88.40%, test_acc:  85.96%, avg NLL:  0.43 lr:  0.0090
+100%|██████████| 1562/1562 [00:33<00:00, 47.30it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.72it/s]
+[22/200] train_acc:  88.69%, test_acc:  85.14%, avg NLL:  0.46 lr:  0.0089
+100%|██████████| 1562/1562 [00:32<00:00, 47.58it/s]
+100%|██████████| 312/312 [00:02<00:00, 126.66it/s]
+[23/200] train_acc:  89.12%, test_acc:  86.57%, avg NLL:  0.40 lr:  0.0089
+100%|██████████| 1562/1562 [00:33<00:00, 46.86it/s]
+100%|██████████| 312/312 [00:02<00:00, 137.29it/s]
+[24/200] train_acc:  89.30%, test_acc:  85.90%, avg NLL:  0.43 lr:  0.0088
+100%|██████████| 1562/1562 [00:32<00:00, 47.85it/s]
+100%|██████████| 312/312 [00:02<00:00, 136.09it/s]
+[25/200] train_acc:  89.44%, test_acc:  86.32%, avg NLL:  0.43 lr:  0.0088
+100%|██████████| 1562/1562 [00:33<00:00, 46.91it/s]
+100%|██████████| 312/312 [00:02<00:00, 139.03it/s]
+[26/200] train_acc:  89.68%, test_acc:  86.11%, avg NLL:  0.43 lr:  0.0087
+100%|██████████| 1562/1562 [00:32<00:00, 47.45it/s]
+100%|██████████| 312/312 [00:02<00:00, 136.83it/s]
+[27/200] train_acc:  89.86%, test_acc:  84.60%, avg NLL:  0.48 lr:  0.0087
+100%|██████████| 1562/1562 [00:33<00:00, 46.56it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.61it/s]
+[28/200] train_acc:  90.13%, test_acc:  86.35%, avg NLL:  0.42 lr:  0.0086
+100%|██████████| 1562/1562 [00:33<00:00, 47.28it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.52it/s]
+[29/200] train_acc:  90.26%, test_acc:  86.80%, avg NLL:  0.41 lr:  0.0086
+100%|██████████| 1562/1562 [00:33<00:00, 46.83it/s]
+100%|██████████| 312/312 [00:02<00:00, 126.56it/s]
+[30/200] train_acc:  90.55%, test_acc:  86.39%, avg NLL:  0.42 lr:  0.0085
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:20<00:00, 77.46it/s]
+100%|█████████▉| 311/312 [03:02<00:00,  1.71it/s]
+mcbn_iters: 1: tp:  86.54%, NLL sum:  4254.78, NLL avg:  0.43, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  86.89%, NLL sum:  4009.74, NLL avg:  0.40, CRPS:  0.03, gaussian NLL expected class:  452.52 gaussian NLL over all classes:  65.33
+mcbn_iters: 4: tp:  87.23%, NLL sum:  3842.15, NLL avg:  0.38, CRPS:  0.03, gaussian NLL expected class:  89.07 gaussian NLL over all classes:  9.47
+mcbn_iters: 8: tp:  87.29%, NLL sum:  3779.31, NLL avg:  0.38, CRPS:  0.03, gaussian NLL expected class:  84.88 gaussian NLL over all classes:  8.70
+mcbn_iters: 16: tp:  87.58%, NLL sum:  3749.20, NLL avg:  0.38, CRPS:  0.03, gaussian NLL expected class:  70.29 gaussian NLL over all classes:  5.44
+mcbn_iters: 32: tp:  87.63%, NLL sum:  3719.49, NLL avg:  0.37, CRPS:  0.03, gaussian NLL expected class:  42.63 gaussian NLL over all classes:  1.63
+mcbn_iters: 64: tp:  87.54%, NLL sum:  3709.42, NLL avg:  0.37, CRPS:  0.03, gaussian NLL expected class:  40.41 gaussian NLL over all classes:  0.90
+mcbn_iters: 128: tp:  87.67%, NLL sum:  3704.56, NLL avg:  0.37, CRPS:  0.03, gaussian NLL expected class:  44.70 gaussian NLL over all classes:  1.21
+100%|██████████| 1562/1562 [00:32<00:00, 47.67it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.66it/s]
+[31/200] train_acc:  90.56%, test_acc:  87.93%, avg NLL:  0.37 lr:  0.0085
+100%|██████████| 1562/1562 [00:33<00:00, 46.91it/s]
+100%|██████████| 312/312 [00:02<00:00, 126.58it/s]
+[32/200] train_acc:  90.66%, test_acc:  87.16%, avg NLL:  0.39 lr:  0.0084
+100%|██████████| 1562/1562 [00:33<00:00, 46.94it/s]
+100%|██████████| 312/312 [00:02<00:00, 128.15it/s]
+[33/200] train_acc:  90.86%, test_acc:  86.49%, avg NLL:  0.44 lr:  0.0084
+100%|██████████| 1562/1562 [00:32<00:00, 47.92it/s]
+100%|██████████| 312/312 [00:02<00:00, 124.48it/s]
+[34/200] train_acc:  91.36%, test_acc:  87.07%, avg NLL:  0.41 lr:  0.0083
+100%|██████████| 1562/1562 [00:32<00:00, 47.42it/s]
+100%|██████████| 312/312 [00:02<00:00, 128.58it/s]
+[35/200] train_acc:  91.06%, test_acc:  87.81%, avg NLL:  0.37 lr:  0.0083
+100%|██████████| 1562/1562 [00:33<00:00, 47.32it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.09it/s]
+[36/200] train_acc:  91.15%, test_acc:  88.55%, avg NLL:  0.35 lr:  0.0082
+100%|██████████| 1562/1562 [00:33<00:00, 46.30it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.61it/s]
+[37/200] train_acc:  91.41%, test_acc:  88.85%, avg NLL:  0.35 lr:  0.0082
+100%|██████████| 1562/1562 [00:33<00:00, 46.24it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.88it/s]
+[38/200] train_acc:  91.47%, test_acc:  87.72%, avg NLL:  0.40 lr:  0.0081
+100%|██████████| 1562/1562 [00:33<00:00, 46.79it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.08it/s]
+[39/200] train_acc:  91.79%, test_acc:  88.18%, avg NLL:  0.36 lr:  0.0081
+100%|██████████| 1562/1562 [00:33<00:00, 46.93it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.71it/s]
+[40/200] train_acc:  91.76%, test_acc:  86.82%, avg NLL:  0.41 lr:  0.0080
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:20<00:00, 77.81it/s]
+100%|█████████▉| 311/312 [03:02<00:00,  1.71it/s]
+mcbn_iters: 1: tp:  86.66%, NLL sum:  4287.41, NLL avg:  0.43, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  87.16%, NLL sum:  4018.70, NLL avg:  0.40, CRPS:  0.03, gaussian NLL expected class:  155.71 gaussian NLL over all classes:  18.38
+mcbn_iters: 4: tp:  87.41%, NLL sum:  3859.53, NLL avg:  0.39, CRPS:  0.03, gaussian NLL expected class:  81.13 gaussian NLL over all classes:  8.51
+mcbn_iters: 8: tp:  87.28%, NLL sum:  3789.84, NLL avg:  0.38, CRPS:  0.03, gaussian NLL expected class:  79.72 gaussian NLL over all classes:  5.55
+mcbn_iters: 16: tp:  87.38%, NLL sum:  3735.88, NLL avg:  0.37, CRPS:  0.03, gaussian NLL expected class:  59.84 gaussian NLL over all classes:  3.51
+mcbn_iters: 32: tp:  87.48%, NLL sum:  3711.25, NLL avg:  0.37, CRPS:  0.03, gaussian NLL expected class:  64.46 gaussian NLL over all classes:  3.93
+mcbn_iters: 64: tp:  87.54%, NLL sum:  3702.47, NLL avg:  0.37, CRPS:  0.03, gaussian NLL expected class:  65.52 gaussian NLL over all classes:  4.30
+mcbn_iters: 128: tp:  87.54%, NLL sum:  3696.14, NLL avg:  0.37, CRPS:  0.03, gaussian NLL expected class:  62.34 gaussian NLL over all classes:  3.92
+100%|██████████| 1562/1562 [00:32<00:00, 47.34it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.80it/s]
+[41/200] train_acc:  91.87%, test_acc:  87.80%, avg NLL:  0.37 lr:  0.0080
+100%|██████████| 1562/1562 [00:33<00:00, 47.17it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.96it/s]
+[42/200] train_acc:  91.99%, test_acc:  87.97%, avg NLL:  0.38 lr:  0.0079
+100%|██████████| 1562/1562 [00:33<00:00, 46.79it/s]
+100%|██████████| 312/312 [00:02<00:00, 128.84it/s]
+[43/200] train_acc:  91.96%, test_acc:  87.65%, avg NLL:  0.40 lr:  0.0079
+100%|██████████| 1562/1562 [00:33<00:00, 47.21it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.48it/s]
+[44/200] train_acc:  92.36%, test_acc:  88.16%, avg NLL:  0.38 lr:  0.0078
+100%|██████████| 1562/1562 [00:33<00:00, 46.93it/s]
+100%|██████████| 312/312 [00:02<00:00, 127.08it/s]
+[45/200] train_acc:  92.38%, test_acc:  88.00%, avg NLL:  0.37 lr:  0.0078
+100%|██████████| 1562/1562 [00:33<00:00, 46.85it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.00it/s]
+[46/200] train_acc:  92.32%, test_acc:  87.72%, avg NLL:  0.39 lr:  0.0077
+100%|██████████| 1562/1562 [00:33<00:00, 46.99it/s]
+100%|██████████| 312/312 [00:02<00:00, 126.23it/s]
+[47/200] train_acc:  92.51%, test_acc:  88.99%, avg NLL:  0.35 lr:  0.0077
+100%|██████████| 1562/1562 [00:33<00:00, 47.11it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.82it/s]
+[48/200] train_acc:  92.52%, test_acc:  88.16%, avg NLL:  0.38 lr:  0.0076
+100%|██████████| 1562/1562 [00:33<00:00, 47.12it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.46it/s]
+[49/200] train_acc:  92.97%, test_acc:  87.23%, avg NLL:  0.41 lr:  0.0076
+100%|██████████| 1562/1562 [00:32<00:00, 47.40it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.28it/s]
+[50/200] train_acc:  92.84%, test_acc:  89.31%, avg NLL:  0.34 lr:  0.0075
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:19<00:00, 78.13it/s]
+100%|█████████▉| 311/312 [03:01<00:00,  1.71it/s]
+mcbn_iters: 1: tp:  87.92%, NLL sum:  3801.64, NLL avg:  0.38, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  88.71%, NLL sum:  3473.71, NLL avg:  0.35, CRPS:  0.02, gaussian NLL expected class:  134.66 gaussian NLL over all classes:  14.25
+mcbn_iters: 4: tp:  89.17%, NLL sum:  3300.58, NLL avg:  0.33, CRPS:  0.02, gaussian NLL expected class:  57.65 gaussian NLL over all classes:  6.20
+mcbn_iters: 8: tp:  89.35%, NLL sum:  3228.04, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  54.97 gaussian NLL over all classes:  5.98
+mcbn_iters: 16: tp:  89.41%, NLL sum:  3205.41, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  54.28 gaussian NLL over all classes:  5.95
+mcbn_iters: 32: tp:  89.45%, NLL sum:  3206.22, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  54.09 gaussian NLL over all classes:  3.07
+mcbn_iters: 64: tp:  89.49%, NLL sum:  3193.75, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  53.64 gaussian NLL over all classes:  3.77
+mcbn_iters: 128: tp:  89.49%, NLL sum:  3188.65, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  53.45 gaussian NLL over all classes:  2.59
+100%|██████████| 1562/1562 [00:33<00:00, 47.11it/s]
+100%|██████████| 312/312 [00:02<00:00, 128.35it/s]
+[51/200] train_acc:  92.67%, test_acc:  88.29%, avg NLL:  0.39 lr:  0.0075
+100%|██████████| 1562/1562 [00:33<00:00, 46.99it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.55it/s]
+[52/200] train_acc:  92.95%, test_acc:  88.98%, avg NLL:  0.36 lr:  0.0074
+100%|██████████| 1562/1562 [00:33<00:00, 46.85it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.05it/s]
+[53/200] train_acc:  92.98%, test_acc:  88.89%, avg NLL:  0.36 lr:  0.0074
+100%|██████████| 1562/1562 [00:33<00:00, 47.22it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.04it/s]
+[54/200] train_acc:  93.03%, test_acc:  88.49%, avg NLL:  0.36 lr:  0.0073
+100%|██████████| 1562/1562 [00:33<00:00, 46.70it/s]
+100%|██████████| 312/312 [00:02<00:00, 128.02it/s]
+[55/200] train_acc:  93.20%, test_acc:  88.57%, avg NLL:  0.37 lr:  0.0073
+100%|██████████| 1562/1562 [00:32<00:00, 47.64it/s]
+100%|██████████| 312/312 [00:02<00:00, 137.06it/s]
+[56/200] train_acc:  93.18%, test_acc:  88.91%, avg NLL:  0.35 lr:  0.0072
+100%|██████████| 1562/1562 [00:33<00:00, 46.88it/s]
+100%|██████████| 312/312 [00:02<00:00, 128.21it/s]
+[57/200] train_acc:  93.38%, test_acc:  89.69%, avg NLL:  0.34 lr:  0.0072
+100%|██████████| 1562/1562 [00:32<00:00, 47.49it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.29it/s]
+[58/200] train_acc:  93.41%, test_acc:  88.45%, avg NLL:  0.39 lr:  0.0071
+100%|██████████| 1562/1562 [00:33<00:00, 46.72it/s]
+100%|██████████| 312/312 [00:02<00:00, 136.24it/s]
+[59/200] train_acc:  93.34%, test_acc:  88.83%, avg NLL:  0.37 lr:  0.0071
+100%|██████████| 1562/1562 [00:33<00:00, 47.14it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.09it/s]
+[60/200] train_acc:  93.55%, test_acc:  87.63%, avg NLL:  0.42 lr:  0.0070
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:19<00:00, 78.78it/s]
+100%|█████████▉| 311/312 [03:01<00:00,  1.71it/s]
+mcbn_iters: 1: tp:  88.22%, NLL sum:  3993.53, NLL avg:  0.40, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  88.38%, NLL sum:  3695.56, NLL avg:  0.37, CRPS:  0.02, gaussian NLL expected class:  173.20 gaussian NLL over all classes:  18.66
+mcbn_iters: 4: tp:  88.87%, NLL sum:  3522.14, NLL avg:  0.35, CRPS:  0.02, gaussian NLL expected class:  104.78 gaussian NLL over all classes:  11.01
+mcbn_iters: 8: tp:  89.00%, NLL sum:  3444.51, NLL avg:  0.35, CRPS:  0.02, gaussian NLL expected class:  87.34 gaussian NLL over all classes:  9.18
+mcbn_iters: 16: tp:  88.97%, NLL sum:  3409.70, NLL avg:  0.34, CRPS:  0.02, gaussian NLL expected class:  66.60 gaussian NLL over all classes:  7.13
+mcbn_iters: 32: tp:  89.06%, NLL sum:  3391.97, NLL avg:  0.34, CRPS:  0.02, gaussian NLL expected class:  61.70 gaussian NLL over all classes:  4.66
+mcbn_iters: 64: tp:  89.08%, NLL sum:  3379.22, NLL avg:  0.34, CRPS:  0.02, gaussian NLL expected class:  61.29 gaussian NLL over all classes:  3.57
+mcbn_iters: 128: tp:  89.09%, NLL sum:  3368.02, NLL avg:  0.34, CRPS:  0.02, gaussian NLL expected class:  59.94 gaussian NLL over all classes:  3.55
+100%|██████████| 1562/1562 [00:33<00:00, 46.44it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.70it/s]
+[61/200] train_acc:  93.40%, test_acc:  88.20%, avg NLL:  0.37 lr:  0.0070
+100%|██████████| 1562/1562 [00:32<00:00, 47.52it/s]
+100%|██████████| 312/312 [00:02<00:00, 137.59it/s]
+[62/200] train_acc:  93.79%, test_acc:  89.53%, avg NLL:  0.35 lr:  0.0069
+100%|██████████| 1562/1562 [00:32<00:00, 47.77it/s]
+100%|██████████| 312/312 [00:02<00:00, 135.87it/s]
+[63/200] train_acc:  93.91%, test_acc:  89.21%, avg NLL:  0.36 lr:  0.0069
+100%|██████████| 1562/1562 [00:33<00:00, 47.24it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.35it/s]
+[64/200] train_acc:  93.95%, test_acc:  89.10%, avg NLL:  0.37 lr:  0.0068
+100%|██████████| 1562/1562 [00:32<00:00, 47.83it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.96it/s]
+[65/200] train_acc:  93.90%, test_acc:  89.00%, avg NLL:  0.37 lr:  0.0068
+100%|██████████| 1562/1562 [00:32<00:00, 47.77it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.00it/s]
+[66/200] train_acc:  93.68%, test_acc:  88.13%, avg NLL:  0.39 lr:  0.0067
+100%|██████████| 1562/1562 [00:33<00:00, 46.93it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.68it/s]
+[67/200] train_acc:  94.07%, test_acc:  87.89%, avg NLL:  0.40 lr:  0.0067
+100%|██████████| 1562/1562 [00:33<00:00, 46.75it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.63it/s]
+[68/200] train_acc:  94.22%, test_acc:  89.02%, avg NLL:  0.37 lr:  0.0066
+100%|██████████| 1562/1562 [00:32<00:00, 47.34it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.69it/s]
+[69/200] train_acc:  94.10%, test_acc:  89.41%, avg NLL:  0.35 lr:  0.0066
+100%|██████████| 1562/1562 [00:33<00:00, 47.17it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.80it/s]
+[70/200] train_acc:  94.23%, test_acc:  89.28%, avg NLL:  0.35 lr:  0.0065
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:19<00:00, 79.34it/s]
+100%|█████████▉| 311/312 [03:02<00:00,  1.71it/s]
+mcbn_iters: 1: tp:  88.83%, NLL sum:  3750.35, NLL avg:  0.38, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  89.13%, NLL sum:  3446.59, NLL avg:  0.35, CRPS:  0.02, gaussian NLL expected class:  180.87 gaussian NLL over all classes:  25.93
+mcbn_iters: 4: tp:  89.50%, NLL sum:  3289.32, NLL avg:  0.33, CRPS:  0.02, gaussian NLL expected class:  130.68 gaussian NLL over all classes:  14.39
+mcbn_iters: 8: tp:  89.54%, NLL sum:  3232.39, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  71.20 gaussian NLL over all classes:  5.54
+mcbn_iters: 16: tp:  89.61%, NLL sum:  3177.81, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  69.82 gaussian NLL over all classes:  5.54
+mcbn_iters: 32: tp:  89.67%, NLL sum:  3158.03, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  62.40 gaussian NLL over all classes:  5.50
+mcbn_iters: 64: tp:  89.65%, NLL sum:  3151.56, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  63.72 gaussian NLL over all classes:  6.76
+mcbn_iters: 128: tp:  89.64%, NLL sum:  3144.33, NLL avg:  0.31, CRPS:  0.02, gaussian NLL expected class:  61.97 gaussian NLL over all classes:  4.51
+100%|██████████| 1562/1562 [00:32<00:00, 47.36it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.73it/s]
+[71/200] train_acc:  94.25%, test_acc:  89.44%, avg NLL:  0.35 lr:  0.0065
+100%|██████████| 1562/1562 [00:33<00:00, 47.24it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.29it/s]
+[72/200] train_acc:  94.31%, test_acc:  88.65%, avg NLL:  0.37 lr:  0.0064
+100%|██████████| 1562/1562 [00:33<00:00, 46.92it/s]
+100%|██████████| 312/312 [00:02<00:00, 128.65it/s]
+[73/200] train_acc:  94.39%, test_acc:  88.99%, avg NLL:  0.37 lr:  0.0064
+100%|██████████| 1562/1562 [00:32<00:00, 48.11it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.37it/s]
+[74/200] train_acc:  94.41%, test_acc:  88.68%, avg NLL:  0.38 lr:  0.0063
+100%|██████████| 1562/1562 [00:33<00:00, 47.07it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.11it/s]
+[75/200] train_acc:  94.60%, test_acc:  89.40%, avg NLL:  0.37 lr:  0.0063
+100%|██████████| 1562/1562 [00:33<00:00, 46.70it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.15it/s]
+[76/200] train_acc:  94.49%, test_acc:  89.76%, avg NLL:  0.34 lr:  0.0062
+100%|██████████| 1562/1562 [00:32<00:00, 47.81it/s]
+100%|██████████| 312/312 [00:02<00:00, 135.93it/s]
+[77/200] train_acc:  94.86%, test_acc:  88.85%, avg NLL:  0.38 lr:  0.0062
+100%|██████████| 1562/1562 [00:33<00:00, 46.79it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.01it/s]
+[78/200] train_acc:  94.67%, test_acc:  88.96%, avg NLL:  0.38 lr:  0.0061
+100%|██████████| 1562/1562 [00:33<00:00, 46.95it/s]
+100%|██████████| 312/312 [00:02<00:00, 126.38it/s]
+[79/200] train_acc:  94.63%, test_acc:  89.26%, avg NLL:  0.37 lr:  0.0061
+100%|██████████| 1562/1562 [00:33<00:00, 47.12it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.23it/s]
+[80/200] train_acc:  94.83%, test_acc:  89.67%, avg NLL:  0.35 lr:  0.0060
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:20<00:00, 78.08it/s]
+100%|█████████▉| 311/312 [03:02<00:00,  1.71it/s]
+mcbn_iters: 1: tp:  88.96%, NLL sum:  3837.04, NLL avg:  0.38, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  89.37%, NLL sum:  3533.87, NLL avg:  0.35, CRPS:  0.02, gaussian NLL expected class:  273.91 gaussian NLL over all classes:  32.60
+mcbn_iters: 4: tp:  89.64%, NLL sum:  3378.62, NLL avg:  0.34, CRPS:  0.02, gaussian NLL expected class:  168.98 gaussian NLL over all classes:  17.24
+mcbn_iters: 8: tp:  89.75%, NLL sum:  3290.71, NLL avg:  0.33, CRPS:  0.02, gaussian NLL expected class:  100.75 gaussian NLL over all classes:  10.38
+mcbn_iters: 16: tp:  89.85%, NLL sum:  3238.69, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  82.35 gaussian NLL over all classes:  8.54
+mcbn_iters: 32: tp:  89.89%, NLL sum:  3218.64, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  75.48 gaussian NLL over all classes:  7.87
+mcbn_iters: 64: tp:  89.81%, NLL sum:  3216.55, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  78.32 gaussian NLL over all classes:  8.00
+mcbn_iters: 128: tp:  89.86%, NLL sum:  3209.90, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  73.96 gaussian NLL over all classes:  7.52
+100%|██████████| 1562/1562 [00:33<00:00, 46.77it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.14it/s]
+[81/200] train_acc:  94.90%, test_acc:  89.44%, avg NLL:  0.36 lr:  0.0060
+100%|██████████| 1562/1562 [00:33<00:00, 47.16it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.28it/s]
+[82/200] train_acc:  94.84%, test_acc:  88.91%, avg NLL:  0.38 lr:  0.0059
+100%|██████████| 1562/1562 [00:33<00:00, 47.03it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.91it/s]
+[83/200] train_acc:  94.90%, test_acc:  89.60%, avg NLL:  0.36 lr:  0.0059
+100%|██████████| 1562/1562 [00:33<00:00, 47.27it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.95it/s]
+[84/200] train_acc:  95.18%, test_acc:  89.37%, avg NLL:  0.36 lr:  0.0058
+100%|██████████| 1562/1562 [00:32<00:00, 47.43it/s]
+100%|██████████| 312/312 [00:02<00:00, 136.09it/s]
+[85/200] train_acc:  95.05%, test_acc:  89.37%, avg NLL:  0.37 lr:  0.0058
+100%|██████████| 1562/1562 [00:32<00:00, 47.39it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.20it/s]
+[86/200] train_acc:  95.08%, test_acc:  89.08%, avg NLL:  0.37 lr:  0.0057
+100%|██████████| 1562/1562 [00:32<00:00, 47.52it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.14it/s]
+[87/200] train_acc:  95.11%, test_acc:  89.59%, avg NLL:  0.35 lr:  0.0057
+100%|██████████| 1562/1562 [00:33<00:00, 47.12it/s]
+100%|██████████| 312/312 [00:02<00:00, 125.86it/s]
+[88/200] train_acc:  95.21%, test_acc:  88.09%, avg NLL:  0.40 lr:  0.0056
+100%|██████████| 1562/1562 [00:32<00:00, 47.45it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.63it/s]
+[89/200] train_acc:  95.31%, test_acc:  89.21%, avg NLL:  0.39 lr:  0.0056
+100%|██████████| 1562/1562 [00:33<00:00, 47.02it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.60it/s]
+[90/200] train_acc:  95.30%, test_acc:  88.80%, avg NLL:  0.40 lr:  0.0055
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:20<00:00, 77.48it/s]
+100%|█████████▉| 311/312 [03:01<00:00,  1.71it/s]
+mcbn_iters: 1: tp:  89.08%, NLL sum:  3819.08, NLL avg:  0.38, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  89.68%, NLL sum:  3486.15, NLL avg:  0.35, CRPS:  0.02, gaussian NLL expected class:  259.41 gaussian NLL over all classes:  34.34
+mcbn_iters: 4: tp:  89.80%, NLL sum:  3326.80, NLL avg:  0.33, CRPS:  0.02, gaussian NLL expected class:  160.37 gaussian NLL over all classes:  17.80
+mcbn_iters: 8: tp:  89.76%, NLL sum:  3242.27, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  129.97 gaussian NLL over all classes:  9.96
+mcbn_iters: 16: tp:  89.72%, NLL sum:  3174.46, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  120.69 gaussian NLL over all classes:  9.43
+mcbn_iters: 32: tp:  89.81%, NLL sum:  3156.56, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  114.84 gaussian NLL over all classes:  8.81
+mcbn_iters: 64: tp:  89.78%, NLL sum:  3148.12, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  110.85 gaussian NLL over all classes:  8.83
+mcbn_iters: 128: tp:  89.89%, NLL sum:  3145.62, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  106.08 gaussian NLL over all classes:  8.12
+100%|██████████| 1562/1562 [00:32<00:00, 47.44it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.20it/s]
+[91/200] train_acc:  95.31%, test_acc:  88.33%, avg NLL:  0.42 lr:  0.0055
+100%|██████████| 1562/1562 [00:32<00:00, 47.42it/s]
+100%|██████████| 312/312 [00:02<00:00, 127.79it/s]
+[92/200] train_acc:  95.52%, test_acc:  89.42%, avg NLL:  0.39 lr:  0.0054
+100%|██████████| 1562/1562 [00:33<00:00, 46.81it/s]
+100%|██████████| 312/312 [00:02<00:00, 135.91it/s]
+[93/200] train_acc:  95.62%, test_acc:  89.27%, avg NLL:  0.37 lr:  0.0054
+100%|██████████| 1562/1562 [00:33<00:00, 47.04it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.52it/s]
+[94/200] train_acc:  95.57%, test_acc:  89.69%, avg NLL:  0.36 lr:  0.0053
+100%|██████████| 1562/1562 [00:33<00:00, 46.74it/s]
+100%|██████████| 312/312 [00:02<00:00, 127.01it/s]
+[95/200] train_acc:  95.43%, test_acc:  90.22%, avg NLL:  0.34 lr:  0.0053
+100%|██████████| 1562/1562 [00:33<00:00, 46.88it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.50it/s]
+[96/200] train_acc:  95.62%, test_acc:  89.97%, avg NLL:  0.34 lr:  0.0052
+100%|██████████| 1562/1562 [00:32<00:00, 47.48it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.64it/s]
+[97/200] train_acc:  95.69%, test_acc:  89.68%, avg NLL:  0.36 lr:  0.0052
+100%|██████████| 1562/1562 [00:32<00:00, 47.51it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.79it/s]
+[98/200] train_acc:  95.85%, test_acc:  89.64%, avg NLL:  0.35 lr:  0.0051
+100%|██████████| 1562/1562 [00:33<00:00, 47.16it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.54it/s]
+[99/200] train_acc:  95.65%, test_acc:  89.45%, avg NLL:  0.37 lr:  0.0051
+100%|██████████| 1562/1562 [00:33<00:00, 46.63it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.36it/s]
+[100/200] train_acc:  95.77%, test_acc:  90.49%, avg NLL:  0.34 lr:  0.0050
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:19<00:00, 80.52it/s]
+100%|█████████▉| 311/312 [03:01<00:00,  1.71it/s]
+mcbn_iters: 1: tp:  89.85%, NLL sum:  3565.60, NLL avg:  0.36, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  90.21%, NLL sum:  3252.42, NLL avg:  0.33, CRPS:  0.02, gaussian NLL expected class:  215.03 gaussian NLL over all classes:  23.71
+mcbn_iters: 4: tp:  90.50%, NLL sum:  3094.30, NLL avg:  0.31, CRPS:  0.02, gaussian NLL expected class:  151.08 gaussian NLL over all classes:  16.18
+mcbn_iters: 8: tp:  90.49%, NLL sum:  3012.75, NLL avg:  0.30, CRPS:  0.02, gaussian NLL expected class:  69.95 gaussian NLL over all classes:  7.46
+mcbn_iters: 16: tp:  90.55%, NLL sum:  2968.98, NLL avg:  0.30, CRPS:  0.02, gaussian NLL expected class:  65.87 gaussian NLL over all classes:  6.80
+mcbn_iters: 32: tp:  90.55%, NLL sum:  2945.51, NLL avg:  0.30, CRPS:  0.02, gaussian NLL expected class:  65.80 gaussian NLL over all classes:  3.62
+mcbn_iters: 64: tp:  90.60%, NLL sum:  2930.90, NLL avg:  0.29, CRPS:  0.02, gaussian NLL expected class:  66.11 gaussian NLL over all classes:  3.69
+mcbn_iters: 128: tp:  90.57%, NLL sum:  2921.27, NLL avg:  0.29, CRPS:  0.02, gaussian NLL expected class:  64.51 gaussian NLL over all classes:  3.44
+100%|██████████| 1562/1562 [00:33<00:00, 46.50it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.60it/s]
+[101/200] train_acc:  95.88%, test_acc:  90.53%, avg NLL:  0.33 lr:  0.0050
+100%|██████████| 1562/1562 [00:33<00:00, 46.82it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.54it/s]
+[102/200] train_acc:  96.12%, test_acc:  90.11%, avg NLL:  0.35 lr:  0.0049
+100%|██████████| 1562/1562 [00:33<00:00, 46.67it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.71it/s]
+[103/200] train_acc:  95.86%, test_acc:  90.16%, avg NLL:  0.36 lr:  0.0049
+100%|██████████| 1562/1562 [00:33<00:00, 47.25it/s]
+100%|██████████| 312/312 [00:02<00:00, 128.87it/s]
+[104/200] train_acc:  95.97%, test_acc:  89.92%, avg NLL:  0.36 lr:  0.0048
+100%|██████████| 1562/1562 [00:33<00:00, 46.91it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.08it/s]
+[105/200] train_acc:  96.01%, test_acc:  89.86%, avg NLL:  0.36 lr:  0.0048
+100%|██████████| 1562/1562 [00:33<00:00, 46.40it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.65it/s]
+[106/200] train_acc:  96.12%, test_acc:  89.76%, avg NLL:  0.36 lr:  0.0047
+100%|██████████| 1562/1562 [00:33<00:00, 46.30it/s]
+100%|██████████| 312/312 [00:02<00:00, 125.50it/s]
+[107/200] train_acc:  96.13%, test_acc:  90.26%, avg NLL:  0.35 lr:  0.0047
+100%|██████████| 1562/1562 [00:33<00:00, 46.79it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.25it/s]
+[108/200] train_acc:  96.28%, test_acc:  90.27%, avg NLL:  0.34 lr:  0.0046
+100%|██████████| 1562/1562 [00:33<00:00, 47.00it/s]
+100%|██████████| 312/312 [00:02<00:00, 125.86it/s]
+[109/200] train_acc:  96.26%, test_acc:  89.48%, avg NLL:  0.37 lr:  0.0046
+100%|██████████| 1562/1562 [00:33<00:00, 46.35it/s]
+100%|██████████| 312/312 [00:02<00:00, 126.89it/s]
+[110/200] train_acc:  96.16%, test_acc:  89.10%, avg NLL:  0.38 lr:  0.0045
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:19<00:00, 78.84it/s]
+100%|█████████▉| 311/312 [03:02<00:00,  1.70it/s]
+mcbn_iters: 1: tp:  88.85%, NLL sum:  4070.75, NLL avg:  0.41, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  89.01%, NLL sum:  3692.03, NLL avg:  0.37, CRPS:  0.02, gaussian NLL expected class:  317.52 gaussian NLL over all classes:  31.03
+mcbn_iters: 4: tp:  89.21%, NLL sum:  3502.50, NLL avg:  0.35, CRPS:  0.02, gaussian NLL expected class:  94.09 gaussian NLL over all classes:  5.08
+mcbn_iters: 8: tp:  89.30%, NLL sum:  3414.11, NLL avg:  0.34, CRPS:  0.02, gaussian NLL expected class:  82.92 gaussian NLL over all classes:  3.68
+mcbn_iters: 16: tp:  89.44%, NLL sum:  3355.80, NLL avg:  0.34, CRPS:  0.02, gaussian NLL expected class:  26.62 gaussian NLL over all classes: -1.99
+mcbn_iters: 32: tp:  89.49%, NLL sum:  3340.97, NLL avg:  0.33, CRPS:  0.02, gaussian NLL expected class:  26.29 gaussian NLL over all classes: -2.04
+mcbn_iters: 64: tp:  89.44%, NLL sum:  3324.40, NLL avg:  0.33, CRPS:  0.02, gaussian NLL expected class:  24.69 gaussian NLL over all classes: -2.23
+mcbn_iters: 128: tp:  89.49%, NLL sum:  3309.91, NLL avg:  0.33, CRPS:  0.02, gaussian NLL expected class:  23.90 gaussian NLL over all classes: -2.28
+100%|██████████| 1562/1562 [00:33<00:00, 46.47it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.02it/s]
+[111/200] train_acc:  96.32%, test_acc:  90.19%, avg NLL:  0.37 lr:  0.0045
+100%|██████████| 1562/1562 [00:33<00:00, 46.73it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.97it/s]
+[112/200] train_acc:  96.38%, test_acc:  89.88%, avg NLL:  0.35 lr:  0.0044
+100%|██████████| 1562/1562 [00:33<00:00, 46.62it/s]
+100%|██████████| 312/312 [00:02<00:00, 127.18it/s]
+[113/200] train_acc:  96.47%, test_acc:  90.05%, avg NLL:  0.36 lr:  0.0044
+100%|██████████| 1562/1562 [00:32<00:00, 47.39it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.16it/s]
+[114/200] train_acc:  96.48%, test_acc:  89.57%, avg NLL:  0.39 lr:  0.0043
+100%|██████████| 1562/1562 [00:33<00:00, 46.97it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.82it/s]
+[115/200] train_acc:  96.48%, test_acc:  88.95%, avg NLL:  0.42 lr:  0.0043
+100%|██████████| 1562/1562 [00:33<00:00, 47.19it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.21it/s]
+[116/200] train_acc:  96.58%, test_acc:  89.81%, avg NLL:  0.37 lr:  0.0042
+100%|██████████| 1562/1562 [00:33<00:00, 47.20it/s]
+100%|██████████| 312/312 [00:02<00:00, 128.74it/s]
+[117/200] train_acc:  96.61%, test_acc:  90.41%, avg NLL:  0.35 lr:  0.0042
+100%|██████████| 1562/1562 [00:33<00:00, 47.24it/s]
+100%|██████████| 312/312 [00:02<00:00, 136.62it/s]
+[118/200] train_acc:  96.79%, test_acc:  90.51%, avg NLL:  0.34 lr:  0.0041
+100%|██████████| 1562/1562 [00:33<00:00, 47.19it/s]
+100%|██████████| 312/312 [00:02<00:00, 135.70it/s]
+[119/200] train_acc:  96.65%, test_acc:  90.52%, avg NLL:  0.35 lr:  0.0041
+100%|██████████| 1562/1562 [00:33<00:00, 46.99it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.38it/s]
+[120/200] train_acc:  96.51%, test_acc:  90.41%, avg NLL:  0.35 lr:  0.0040
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:19<00:00, 79.85it/s]
+100%|█████████▉| 311/312 [03:01<00:00,  1.71it/s]
+mcbn_iters: 1: tp:  89.79%, NLL sum:  3800.67, NLL avg:  0.38, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  90.29%, NLL sum:  3445.56, NLL avg:  0.35, CRPS:  0.02, gaussian NLL expected class:  304.98 gaussian NLL over all classes:  29.33
+mcbn_iters: 4: tp:  90.49%, NLL sum:  3244.41, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  210.46 gaussian NLL over all classes:  17.55
+mcbn_iters: 8: tp:  90.40%, NLL sum:  3179.33, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  149.16 gaussian NLL over all classes:  10.64
+mcbn_iters: 16: tp:  90.44%, NLL sum:  3107.62, NLL avg:  0.31, CRPS:  0.02, gaussian NLL expected class:  136.58 gaussian NLL over all classes:  9.31
+mcbn_iters: 32: tp:  90.59%, NLL sum:  3079.40, NLL avg:  0.31, CRPS:  0.02, gaussian NLL expected class:  109.53 gaussian NLL over all classes:  6.47
+mcbn_iters: 64: tp:  90.60%, NLL sum:  3067.94, NLL avg:  0.31, CRPS:  0.02, gaussian NLL expected class:  112.25 gaussian NLL over all classes:  6.81
+mcbn_iters: 128: tp:  90.61%, NLL sum:  3057.39, NLL avg:  0.31, CRPS:  0.02, gaussian NLL expected class:  98.42 gaussian NLL over all classes:  5.32
+100%|██████████| 1562/1562 [00:32<00:00, 47.60it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.83it/s]
+[121/200] train_acc:  96.90%, test_acc:  90.17%, avg NLL:  0.36 lr:  0.0040
+100%|██████████| 1562/1562 [00:33<00:00, 46.94it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.18it/s]
+[122/200] train_acc:  96.96%, test_acc:  90.03%, avg NLL:  0.39 lr:  0.0039
+100%|██████████| 1562/1562 [00:32<00:00, 47.76it/s]
+100%|██████████| 312/312 [00:02<00:00, 136.94it/s]
+[123/200] train_acc:  96.84%, test_acc:  90.67%, avg NLL:  0.34 lr:  0.0039
+100%|██████████| 1562/1562 [00:33<00:00, 47.06it/s]
+100%|██████████| 312/312 [00:02<00:00, 136.40it/s]
+[124/200] train_acc:  97.12%, test_acc:  90.03%, avg NLL:  0.38 lr:  0.0038
+100%|██████████| 1562/1562 [00:32<00:00, 47.52it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.36it/s]
+[125/200] train_acc:  97.00%, test_acc:  90.38%, avg NLL:  0.36 lr:  0.0038
+100%|██████████| 1562/1562 [00:32<00:00, 47.58it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.27it/s]
+[126/200] train_acc:  96.92%, test_acc:  90.17%, avg NLL:  0.37 lr:  0.0037
+100%|██████████| 1562/1562 [00:33<00:00, 47.07it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.68it/s]
+[127/200] train_acc:  97.14%, test_acc:  90.76%, avg NLL:  0.33 lr:  0.0037
+100%|██████████| 1562/1562 [00:33<00:00, 46.76it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.20it/s]
+[128/200] train_acc:  97.12%, test_acc:  90.09%, avg NLL:  0.37 lr:  0.0036
+100%|██████████| 1562/1562 [00:33<00:00, 47.05it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.76it/s]
+[129/200] train_acc:  97.36%, test_acc:  90.81%, avg NLL:  0.33 lr:  0.0036
+100%|██████████| 1562/1562 [00:33<00:00, 46.99it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.94it/s]
+[130/200] train_acc:  97.29%, test_acc:  89.50%, avg NLL:  0.40 lr:  0.0035
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:19<00:00, 79.70it/s]
+100%|█████████▉| 311/312 [03:02<00:00,  1.71it/s]
+mcbn_iters: 1: tp:  89.20%, NLL sum:  4104.21, NLL avg:  0.41, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  89.96%, NLL sum:  3698.79, NLL avg:  0.37, CRPS:  0.02, gaussian NLL expected class:  621.06 gaussian NLL over all classes:  67.22
+mcbn_iters: 4: tp:  90.14%, NLL sum:  3472.62, NLL avg:  0.35, CRPS:  0.02, gaussian NLL expected class:  295.53 gaussian NLL over all classes:  27.28
+mcbn_iters: 8: tp:  90.41%, NLL sum:  3374.74, NLL avg:  0.34, CRPS:  0.02, gaussian NLL expected class:  200.70 gaussian NLL over all classes:  16.78
+mcbn_iters: 16: tp:  90.38%, NLL sum:  3312.39, NLL avg:  0.33, CRPS:  0.02, gaussian NLL expected class:  151.30 gaussian NLL over all classes:  11.45
+mcbn_iters: 32: tp:  90.38%, NLL sum:  3283.72, NLL avg:  0.33, CRPS:  0.02, gaussian NLL expected class:  143.10 gaussian NLL over all classes:  10.51
+mcbn_iters: 64: tp:  90.35%, NLL sum:  3258.28, NLL avg:  0.33, CRPS:  0.02, gaussian NLL expected class:  130.88 gaussian NLL over all classes:  8.92
+mcbn_iters: 128: tp:  90.42%, NLL sum:  3254.14, NLL avg:  0.33, CRPS:  0.02, gaussian NLL expected class:  123.37 gaussian NLL over all classes:  8.07
+100%|██████████| 1562/1562 [00:33<00:00, 47.17it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.51it/s]
+[131/200] train_acc:  97.41%, test_acc:  90.44%, avg NLL:  0.35 lr:  0.0035
+100%|██████████| 1562/1562 [00:33<00:00, 47.31it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.21it/s]
+[132/200] train_acc:  97.48%, test_acc:  90.83%, avg NLL:  0.34 lr:  0.0034
+100%|██████████| 1562/1562 [00:33<00:00, 47.12it/s]
+100%|██████████| 312/312 [00:02<00:00, 135.06it/s]
+[133/200] train_acc:  97.49%, test_acc:  90.30%, avg NLL:  0.38 lr:  0.0034
+100%|██████████| 1562/1562 [00:33<00:00, 46.15it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.71it/s]
+[134/200] train_acc:  97.41%, test_acc:  90.60%, avg NLL:  0.36 lr:  0.0033
+100%|██████████| 1562/1562 [00:32<00:00, 47.77it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.09it/s]
+[135/200] train_acc:  97.52%, test_acc:  90.38%, avg NLL:  0.36 lr:  0.0033
+100%|██████████| 1562/1562 [00:33<00:00, 47.07it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.42it/s]
+[136/200] train_acc:  97.56%, test_acc:  90.62%, avg NLL:  0.36 lr:  0.0032
+100%|██████████| 1562/1562 [00:33<00:00, 46.34it/s]
+100%|██████████| 312/312 [00:02<00:00, 125.72it/s]
+[137/200] train_acc:  97.62%, test_acc:  90.86%, avg NLL:  0.35 lr:  0.0032
+100%|██████████| 1562/1562 [00:33<00:00, 47.08it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.95it/s]
+[138/200] train_acc:  97.70%, test_acc:  90.92%, avg NLL:  0.34 lr:  0.0031
+100%|██████████| 1562/1562 [00:33<00:00, 47.12it/s]
+100%|██████████| 312/312 [00:02<00:00, 126.31it/s]
+[139/200] train_acc:  97.74%, test_acc:  90.96%, avg NLL:  0.35 lr:  0.0031
+100%|██████████| 1562/1562 [00:33<00:00, 46.74it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.19it/s]
+[140/200] train_acc:  97.76%, test_acc:  90.85%, avg NLL:  0.35 lr:  0.0030
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:20<00:00, 77.97it/s]
+100%|█████████▉| 311/312 [03:02<00:00,  1.70it/s]
+mcbn_iters: 1: tp:  89.97%, NLL sum:  3915.57, NLL avg:  0.39, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  90.58%, NLL sum:  3488.48, NLL avg:  0.35, CRPS:  0.02, gaussian NLL expected class:  632.38 gaussian NLL over all classes:  80.17
+mcbn_iters: 4: tp:  90.72%, NLL sum:  3276.49, NLL avg:  0.33, CRPS:  0.02, gaussian NLL expected class:  370.24 gaussian NLL over all classes:  42.28
+mcbn_iters: 8: tp:  90.93%, NLL sum:  3149.86, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  298.19 gaussian NLL over all classes:  30.58
+mcbn_iters: 16: tp:  90.86%, NLL sum:  3088.68, NLL avg:  0.31, CRPS:  0.02, gaussian NLL expected class:  284.85 gaussian NLL over all classes:  29.44
+mcbn_iters: 32: tp:  90.92%, NLL sum:  3042.90, NLL avg:  0.30, CRPS:  0.02, gaussian NLL expected class:  259.53 gaussian NLL over all classes:  24.98
+mcbn_iters: 64: tp:  90.92%, NLL sum:  3027.53, NLL avg:  0.30, CRPS:  0.02, gaussian NLL expected class:  235.21 gaussian NLL over all classes:  20.72
+mcbn_iters: 128: tp:  90.93%, NLL sum:  3019.89, NLL avg:  0.30, CRPS:  0.02, gaussian NLL expected class:  230.73 gaussian NLL over all classes:  20.08
+100%|██████████| 1562/1562 [00:33<00:00, 47.04it/s]
+100%|██████████| 312/312 [00:02<00:00, 140.04it/s]
+[141/200] train_acc:  97.91%, test_acc:  90.87%, avg NLL:  0.36 lr:  0.0030
+100%|██████████| 1562/1562 [00:32<00:00, 47.57it/s]
+100%|██████████| 312/312 [00:02<00:00, 127.63it/s]
+[142/200] train_acc:  97.72%, test_acc:  90.88%, avg NLL:  0.35 lr:  0.0029
+100%|██████████| 1562/1562 [00:33<00:00, 46.40it/s]
+100%|██████████| 312/312 [00:02<00:00, 136.12it/s]
+[143/200] train_acc:  97.93%, test_acc:  90.32%, avg NLL:  0.38 lr:  0.0029
+100%|██████████| 1562/1562 [00:32<00:00, 47.94it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.36it/s]
+[144/200] train_acc:  97.95%, test_acc:  90.42%, avg NLL:  0.36 lr:  0.0028
+100%|██████████| 1562/1562 [00:33<00:00, 47.08it/s]
+100%|██████████| 312/312 [00:02<00:00, 128.50it/s]
+[145/200] train_acc:  97.91%, test_acc:  90.53%, avg NLL:  0.38 lr:  0.0028
+100%|██████████| 1562/1562 [00:32<00:00, 47.52it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.03it/s]
+[146/200] train_acc:  97.86%, test_acc:  90.51%, avg NLL:  0.39 lr:  0.0027
+100%|██████████| 1562/1562 [00:33<00:00, 46.50it/s]
+100%|██████████| 312/312 [00:02<00:00, 124.98it/s]
+[147/200] train_acc:  98.14%, test_acc:  91.23%, avg NLL:  0.35 lr:  0.0027
+100%|██████████| 1562/1562 [00:33<00:00, 46.82it/s]
+100%|██████████| 312/312 [00:02<00:00, 124.80it/s]
+[148/200] train_acc:  98.16%, test_acc:  90.98%, avg NLL:  0.35 lr:  0.0026
+100%|██████████| 1562/1562 [00:33<00:00, 47.07it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.75it/s]
+[149/200] train_acc:  98.08%, test_acc:  90.93%, avg NLL:  0.36 lr:  0.0026
+100%|██████████| 1562/1562 [00:33<00:00, 46.89it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.50it/s]
+[150/200] train_acc:  98.21%, test_acc:  91.12%, avg NLL:  0.34 lr:  0.0025
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:20<00:00, 76.92it/s]
+100%|█████████▉| 311/312 [03:01<00:00,  1.71it/s]
+mcbn_iters: 1: tp:  90.64%, NLL sum:  3786.28, NLL avg:  0.38, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  90.84%, NLL sum:  3427.49, NLL avg:  0.34, CRPS:  0.02, gaussian NLL expected class:  582.16 gaussian NLL over all classes:  72.50
+mcbn_iters: 4: tp:  91.27%, NLL sum:  3212.09, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  270.98 gaussian NLL over all classes:  29.58
+mcbn_iters: 8: tp:  91.38%, NLL sum:  3103.38, NLL avg:  0.31, CRPS:  0.02, gaussian NLL expected class:  176.97 gaussian NLL over all classes:  17.73
+mcbn_iters: 16: tp:  91.31%, NLL sum:  3031.89, NLL avg:  0.30, CRPS:  0.02, gaussian NLL expected class:  125.80 gaussian NLL over all classes:  10.93
+mcbn_iters: 32: tp:  91.33%, NLL sum:  3012.10, NLL avg:  0.30, CRPS:  0.02, gaussian NLL expected class:  92.39 gaussian NLL over all classes:  5.49
+mcbn_iters: 64: tp:  91.34%, NLL sum:  2994.01, NLL avg:  0.30, CRPS:  0.02, gaussian NLL expected class:  91.53 gaussian NLL over all classes:  5.61
+mcbn_iters: 128: tp:  91.30%, NLL sum:  2977.56, NLL avg:  0.30, CRPS:  0.02, gaussian NLL expected class:  84.50 gaussian NLL over all classes:  4.77
+100%|██████████| 1562/1562 [00:33<00:00, 46.85it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.68it/s]
+[151/200] train_acc:  98.48%, test_acc:  90.87%, avg NLL:  0.36 lr:  0.0025
+100%|██████████| 1562/1562 [00:32<00:00, 47.88it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.94it/s]
+[152/200] train_acc:  98.34%, test_acc:  91.09%, avg NLL:  0.34 lr:  0.0024
+100%|██████████| 1562/1562 [00:32<00:00, 47.51it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.74it/s]
+[153/200] train_acc:  98.57%, test_acc:  91.13%, avg NLL:  0.35 lr:  0.0024
+100%|██████████| 1562/1562 [00:33<00:00, 47.24it/s]
+100%|██████████| 312/312 [00:02<00:00, 128.33it/s]
+[154/200] train_acc:  98.58%, test_acc:  90.87%, avg NLL:  0.37 lr:  0.0023
+100%|██████████| 1562/1562 [00:33<00:00, 46.76it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.57it/s]
+[155/200] train_acc:  98.56%, test_acc:  91.56%, avg NLL:  0.35 lr:  0.0023
+100%|██████████| 1562/1562 [00:33<00:00, 46.76it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.10it/s]
+[156/200] train_acc:  98.63%, test_acc:  90.79%, avg NLL:  0.37 lr:  0.0022
+100%|██████████| 1562/1562 [00:33<00:00, 46.54it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.04it/s]
+[157/200] train_acc:  98.62%, test_acc:  91.21%, avg NLL:  0.37 lr:  0.0022
+100%|██████████| 1562/1562 [00:33<00:00, 47.24it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.53it/s]
+[158/200] train_acc:  98.71%, test_acc:  91.57%, avg NLL:  0.35 lr:  0.0021
+100%|██████████| 1562/1562 [00:33<00:00, 47.29it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.69it/s]
+[159/200] train_acc:  98.68%, test_acc:  91.29%, avg NLL:  0.35 lr:  0.0021
+100%|██████████| 1562/1562 [00:33<00:00, 46.78it/s]
+100%|██████████| 312/312 [00:02<00:00, 128.97it/s]
+[160/200] train_acc:  98.78%, test_acc:  91.36%, avg NLL:  0.36 lr:  0.0020
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:20<00:00, 76.39it/s]
+100%|█████████▉| 311/312 [03:02<00:00,  1.70it/s]
+mcbn_iters: 1: tp:  90.78%, NLL sum:  4004.36, NLL avg:  0.40, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  91.21%, NLL sum:  3585.13, NLL avg:  0.36, CRPS:  0.02, gaussian NLL expected class:  1003.38 gaussian NLL over all classes:  116.62
+mcbn_iters: 4: tp:  91.44%, NLL sum:  3325.61, NLL avg:  0.33, CRPS:  0.02, gaussian NLL expected class:  434.34 gaussian NLL over all classes:  42.56
+mcbn_iters: 8: tp:  91.56%, NLL sum:  3173.76, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  347.63 gaussian NLL over all classes:  33.84
+mcbn_iters: 16: tp:  91.62%, NLL sum:  3106.07, NLL avg:  0.31, CRPS:  0.02, gaussian NLL expected class:  336.93 gaussian NLL over all classes:  32.18
+mcbn_iters: 32: tp:  91.51%, NLL sum:  3071.99, NLL avg:  0.31, CRPS:  0.02, gaussian NLL expected class:  258.13 gaussian NLL over all classes:  22.02
+mcbn_iters: 64: tp:  91.53%, NLL sum:  3048.59, NLL avg:  0.31, CRPS:  0.02, gaussian NLL expected class:  228.23 gaussian NLL over all classes:  18.99
+mcbn_iters: 128: tp:  91.53%, NLL sum:  3039.15, NLL avg:  0.30, CRPS:  0.02, gaussian NLL expected class:  225.20 gaussian NLL over all classes:  18.77
+100%|██████████| 1562/1562 [00:33<00:00, 46.64it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.14it/s]
+[161/200] train_acc:  98.95%, test_acc:  91.44%, avg NLL:  0.35 lr:  0.0020
+100%|██████████| 1562/1562 [00:32<00:00, 47.51it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.48it/s]
+[162/200] train_acc:  98.91%, test_acc:  91.30%, avg NLL:  0.36 lr:  0.0019
+100%|██████████| 1562/1562 [00:32<00:00, 47.40it/s]
+100%|██████████| 312/312 [00:02<00:00, 128.85it/s]
+[163/200] train_acc:  98.96%, test_acc:  91.64%, avg NLL:  0.34 lr:  0.0019
+100%|██████████| 1562/1562 [00:32<00:00, 47.46it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.34it/s]
+[164/200] train_acc:  99.03%, test_acc:  91.55%, avg NLL:  0.35 lr:  0.0018
+100%|██████████| 1562/1562 [00:33<00:00, 46.93it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.61it/s]
+[165/200] train_acc:  99.17%, test_acc:  91.68%, avg NLL:  0.36 lr:  0.0018
+100%|██████████| 1562/1562 [00:32<00:00, 47.67it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.44it/s]
+[166/200] train_acc:  99.05%, test_acc:  91.55%, avg NLL:  0.36 lr:  0.0017
+100%|██████████| 1562/1562 [00:33<00:00, 46.73it/s]
+100%|██████████| 312/312 [00:02<00:00, 127.64it/s]
+[167/200] train_acc:  99.29%, test_acc:  91.89%, avg NLL:  0.35 lr:  0.0017
+100%|██████████| 1562/1562 [00:32<00:00, 47.49it/s]
+100%|██████████| 312/312 [00:02<00:00, 128.94it/s]
+[168/200] train_acc:  99.11%, test_acc:  91.31%, avg NLL:  0.37 lr:  0.0016
+100%|██████████| 1562/1562 [00:33<00:00, 46.97it/s]
+100%|██████████| 312/312 [00:02<00:00, 136.28it/s]
+[169/200] train_acc:  99.07%, test_acc:  90.86%, avg NLL:  0.38 lr:  0.0016
+100%|██████████| 1562/1562 [00:33<00:00, 47.21it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.26it/s]
+[170/200] train_acc:  99.20%, test_acc:  91.51%, avg NLL:  0.36 lr:  0.0015
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:19<00:00, 80.80it/s]
+100%|█████████▉| 311/312 [03:02<00:00,  1.71it/s]
+mcbn_iters: 1: tp:  90.92%, NLL sum:  4043.75, NLL avg:  0.41, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  91.36%, NLL sum:  3462.07, NLL avg:  0.35, CRPS:  0.02, gaussian NLL expected class:  895.04 gaussian NLL over all classes:  118.56
+mcbn_iters: 4: tp:  91.55%, NLL sum:  3217.57, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  504.73 gaussian NLL over all classes:  67.40
+mcbn_iters: 8: tp:  91.67%, NLL sum:  3094.31, NLL avg:  0.31, CRPS:  0.02, gaussian NLL expected class:  385.93 gaussian NLL over all classes:  49.98
+mcbn_iters: 16: tp:  91.67%, NLL sum:  3028.39, NLL avg:  0.30, CRPS:  0.02, gaussian NLL expected class:  307.71 gaussian NLL over all classes:  33.94
+mcbn_iters: 32: tp:  91.77%, NLL sum:  2985.92, NLL avg:  0.30, CRPS:  0.02, gaussian NLL expected class:  275.36 gaussian NLL over all classes:  28.83
+mcbn_iters: 64: tp:  91.69%, NLL sum:  2970.89, NLL avg:  0.30, CRPS:  0.02, gaussian NLL expected class:  191.51 gaussian NLL over all classes:  19.52
+mcbn_iters: 128: tp:  91.78%, NLL sum:  2954.35, NLL avg:  0.30, CRPS:  0.02, gaussian NLL expected class:  158.99 gaussian NLL over all classes:  16.35
+100%|██████████| 1562/1562 [00:32<00:00, 47.77it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.52it/s]
+[171/200] train_acc:  99.28%, test_acc:  92.10%, avg NLL:  0.35 lr:  0.0015
+100%|██████████| 1562/1562 [00:33<00:00, 46.44it/s]
+100%|██████████| 312/312 [00:02<00:00, 134.58it/s]
+[172/200] train_acc:  99.38%, test_acc:  91.73%, avg NLL:  0.35 lr:  0.0014
+100%|██████████| 1562/1562 [00:33<00:00, 47.20it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.53it/s]
+[173/200] train_acc:  99.33%, test_acc:  91.90%, avg NLL:  0.34 lr:  0.0014
+100%|██████████| 1562/1562 [00:33<00:00, 46.57it/s]
+100%|██████████| 312/312 [00:02<00:00, 125.95it/s]
+[174/200] train_acc:  99.41%, test_acc:  91.94%, avg NLL:  0.35 lr:  0.0013
+100%|██████████| 1562/1562 [00:33<00:00, 47.07it/s]
+100%|██████████| 312/312 [00:02<00:00, 136.13it/s]
+[175/200] train_acc:  99.51%, test_acc:  92.11%, avg NLL:  0.34 lr:  0.0013
+100%|██████████| 1562/1562 [00:33<00:00, 47.16it/s]
+100%|██████████| 312/312 [00:02<00:00, 135.08it/s]
+[176/200] train_acc:  99.45%, test_acc:  91.83%, avg NLL:  0.34 lr:  0.0012
+100%|██████████| 1562/1562 [00:32<00:00, 47.44it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.70it/s]
+[177/200] train_acc:  99.46%, test_acc:  92.02%, avg NLL:  0.34 lr:  0.0012
+100%|██████████| 1562/1562 [00:33<00:00, 47.18it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.22it/s]
+[178/200] train_acc:  99.51%, test_acc:  92.21%, avg NLL:  0.33 lr:  0.0011
+100%|██████████| 1562/1562 [00:33<00:00, 47.02it/s]
+100%|██████████| 312/312 [00:02<00:00, 115.81it/s]
+[179/200] train_acc:  99.57%, test_acc:  92.36%, avg NLL:  0.33 lr:  0.0011
+100%|██████████| 1562/1562 [00:33<00:00, 47.24it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.54it/s]
+[180/200] train_acc:  99.64%, test_acc:  92.01%, avg NLL:  0.36 lr:  0.0010
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:19<00:00, 80.22it/s]
+100%|█████████▉| 311/312 [03:02<00:00,  1.71it/s]
+mcbn_iters: 1: tp:  91.50%, NLL sum:  3960.79, NLL avg:  0.40, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  91.93%, NLL sum:  3402.73, NLL avg:  0.34, CRPS:  0.02, gaussian NLL expected class:  1069.92 gaussian NLL over all classes:  141.73
+mcbn_iters: 4: tp:  92.17%, NLL sum:  3151.38, NLL avg:  0.32, CRPS:  0.02, gaussian NLL expected class:  699.87 gaussian NLL over all classes:  89.09
+mcbn_iters: 8: tp:  92.15%, NLL sum:  3008.94, NLL avg:  0.30, CRPS:  0.01, gaussian NLL expected class:  568.30 gaussian NLL over all classes:  72.78
+mcbn_iters: 16: tp:  92.22%, NLL sum:  2918.36, NLL avg:  0.29, CRPS:  0.01, gaussian NLL expected class:  461.75 gaussian NLL over all classes:  57.64
+mcbn_iters: 32: tp:  92.33%, NLL sum:  2867.63, NLL avg:  0.29, CRPS:  0.01, gaussian NLL expected class:  405.63 gaussian NLL over all classes:  49.48
+mcbn_iters: 64: tp:  92.26%, NLL sum:  2847.56, NLL avg:  0.29, CRPS:  0.01, gaussian NLL expected class:  338.03 gaussian NLL over all classes:  40.81
+mcbn_iters: 128: tp:  92.28%, NLL sum:  2831.79, NLL avg:  0.28, CRPS:  0.01, gaussian NLL expected class:  319.77 gaussian NLL over all classes:  38.37
+100%|██████████| 1562/1562 [00:32<00:00, 47.84it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.14it/s]
+[181/200] train_acc:  99.60%, test_acc:  92.31%, avg NLL:  0.35 lr:  0.0010
+100%|██████████| 1562/1562 [00:32<00:00, 47.90it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.43it/s]
+[182/200] train_acc:  99.72%, test_acc:  92.17%, avg NLL:  0.34 lr:  0.0009
+100%|██████████| 1562/1562 [00:32<00:00, 47.56it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.75it/s]
+[183/200] train_acc:  99.70%, test_acc:  92.42%, avg NLL:  0.34 lr:  0.0009
+100%|██████████| 1562/1562 [00:33<00:00, 47.29it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.30it/s]
+[184/200] train_acc:  99.73%, test_acc:  92.26%, avg NLL:  0.34 lr:  0.0008
+100%|██████████| 1562/1562 [00:33<00:00, 46.62it/s]
+100%|██████████| 312/312 [00:02<00:00, 127.96it/s]
+[185/200] train_acc:  99.72%, test_acc:  92.37%, avg NLL:  0.34 lr:  0.0008
+100%|██████████| 1562/1562 [00:32<00:00, 47.74it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.84it/s]
+[186/200] train_acc:  99.72%, test_acc:  92.49%, avg NLL:  0.34 lr:  0.0007
+100%|██████████| 1562/1562 [00:33<00:00, 46.93it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.67it/s]
+[187/200] train_acc:  99.77%, test_acc:  92.35%, avg NLL:  0.34 lr:  0.0007
+100%|██████████| 1562/1562 [00:33<00:00, 47.16it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.90it/s]
+[188/200] train_acc:  99.84%, test_acc:  92.69%, avg NLL:  0.34 lr:  0.0006
+100%|██████████| 1562/1562 [00:33<00:00, 47.32it/s]
+100%|██████████| 312/312 [00:02<00:00, 132.20it/s]
+[189/200] train_acc:  99.79%, test_acc:  92.29%, avg NLL:  0.34 lr:  0.0006
+100%|██████████| 1562/1562 [00:33<00:00, 47.18it/s]
+100%|██████████| 312/312 [00:02<00:00, 128.87it/s]
+[190/200] train_acc:  99.82%, test_acc:  92.53%, avg NLL:  0.33 lr:  0.0005
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:19<00:00, 79.23it/s]
+100%|█████████▉| 311/312 [03:02<00:00,  1.71it/s]
+mcbn_iters: 1: tp:  91.98%, NLL sum:  3840.09, NLL avg:  0.38, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  92.38%, NLL sum:  3313.91, NLL avg:  0.33, CRPS:  0.01, gaussian NLL expected class:  1108.22 gaussian NLL over all classes:  151.81
+mcbn_iters: 4: tp:  92.48%, NLL sum:  3047.68, NLL avg:  0.31, CRPS:  0.01, gaussian NLL expected class:  596.31 gaussian NLL over all classes:  74.33
+mcbn_iters: 8: tp:  92.53%, NLL sum:  2900.95, NLL avg:  0.29, CRPS:  0.01, gaussian NLL expected class:  487.19 gaussian NLL over all classes:  62.11
+mcbn_iters: 16: tp:  92.49%, NLL sum:  2823.50, NLL avg:  0.28, CRPS:  0.01, gaussian NLL expected class:  372.85 gaussian NLL over all classes:  44.34
+mcbn_iters: 32: tp:  92.50%, NLL sum:  2772.79, NLL avg:  0.28, CRPS:  0.01, gaussian NLL expected class:  339.73 gaussian NLL over all classes:  39.34
+mcbn_iters: 64: tp:  92.61%, NLL sum:  2751.34, NLL avg:  0.28, CRPS:  0.01, gaussian NLL expected class:  289.92 gaussian NLL over all classes:  33.23
+mcbn_iters: 128: tp:  92.55%, NLL sum:  2741.23, NLL avg:  0.27, CRPS:  0.01, gaussian NLL expected class:  255.70 gaussian NLL over all classes:  29.00
+100%|██████████| 1562/1562 [00:33<00:00, 46.52it/s]
+100%|██████████| 312/312 [00:02<00:00, 137.31it/s]
+[191/200] train_acc:  99.84%, test_acc:  92.49%, avg NLL:  0.34 lr:  0.0005
+100%|██████████| 1562/1562 [00:32<00:00, 47.50it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.42it/s]
+[192/200] train_acc:  99.84%, test_acc:  92.53%, avg NLL:  0.34 lr:  0.0004
+100%|██████████| 1562/1562 [00:33<00:00, 46.30it/s]
+100%|██████████| 312/312 [00:02<00:00, 133.90it/s]
+[193/200] train_acc:  99.83%, test_acc:  92.65%, avg NLL:  0.34 lr:  0.0004
+100%|██████████| 1562/1562 [00:33<00:00, 47.09it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.75it/s]
+[194/200] train_acc:  99.84%, test_acc:  92.74%, avg NLL:  0.33 lr:  0.0003
+100%|██████████| 1562/1562 [00:33<00:00, 46.78it/s]
+100%|██████████| 312/312 [00:02<00:00, 129.05it/s]
+[195/200] train_acc:  99.85%, test_acc:  92.60%, avg NLL:  0.33 lr:  0.0003
+100%|██████████| 1562/1562 [00:33<00:00, 46.87it/s]
+100%|██████████| 312/312 [00:02<00:00, 123.05it/s]
+[196/200] train_acc:  99.88%, test_acc:  92.70%, avg NLL:  0.33 lr:  0.0002
+100%|██████████| 1562/1562 [00:33<00:00, 47.02it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.62it/s]
+[197/200] train_acc:  99.89%, test_acc:  92.70%, avg NLL:  0.33 lr:  0.0002
+100%|██████████| 1562/1562 [00:33<00:00, 47.12it/s]
+100%|██████████| 312/312 [00:02<00:00, 131.35it/s]
+[198/200] train_acc:  99.86%, test_acc:  92.60%, avg NLL:  0.33 lr:  0.0001
+100%|██████████| 1562/1562 [00:33<00:00, 46.96it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.79it/s]
+[199/200] train_acc:  99.91%, test_acc:  92.61%, avg NLL:  0.33 lr:  0.0001
+100%|██████████| 1562/1562 [00:33<00:00, 46.49it/s]
+100%|██████████| 312/312 [00:02<00:00, 130.72it/s]
+[200/200] train_acc:  99.90%, test_acc:  92.66%, avg NLL:  0.33 lr:  0.0000
+collect bn parameters for each train batch
+100%|██████████| 1562/1562 [00:19<00:00, 78.37it/s]
+100%|█████████▉| 311/312 [03:02<00:00,  1.71it/s]
+mcbn_iters: 1: tp:  91.85%, NLL sum:  3728.14, NLL avg:  0.37, CRPS:  0.00, gaussian NLL expected class:  0.00 gaussian NLL over all classes:  0.00
+mcbn_iters: 2: tp:  92.26%, NLL sum:  3255.25, NLL avg:  0.33, CRPS:  0.01, gaussian NLL expected class:  1087.69 gaussian NLL over all classes:  145.58
+mcbn_iters: 4: tp:  92.52%, NLL sum:  2995.30, NLL avg:  0.30, CRPS:  0.01, gaussian NLL expected class:  479.33 gaussian NLL over all classes:  56.77
+mcbn_iters: 8: tp:  92.68%, NLL sum:  2870.29, NLL avg:  0.29, CRPS:  0.01, gaussian NLL expected class:  446.42 gaussian NLL over all classes:  49.89
+mcbn_iters: 16: tp:  92.72%, NLL sum:  2775.25, NLL avg:  0.28, CRPS:  0.01, gaussian NLL expected class:  330.68 gaussian NLL over all classes:  34.96
+mcbn_iters: 32: tp:  92.74%, NLL sum:  2708.77, NLL avg:  0.27, CRPS:  0.01, gaussian NLL expected class:  242.18 gaussian NLL over all classes:  25.85
+mcbn_iters: 64: tp:  92.85%, NLL sum:  2683.09, NLL avg:  0.27, CRPS:  0.01, gaussian NLL expected class:  233.91 gaussian NLL over all classes:  24.90
+mcbn_iters: 128: tp:  92.89%, NLL sum:  2672.88, NLL avg:  0.27, CRPS:  0.01, gaussian NLL expected class:  215.90 gaussian NLL over all classes:  22.73
