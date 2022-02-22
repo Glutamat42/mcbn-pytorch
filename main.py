@@ -20,18 +20,21 @@ from torch.utils.data import DataLoader
 from cifar_dataloader import build_dataloader
 from resnet_s import resnet32
 
-dataset = 'cifar10'
+dataset = 'cifar10'  # only cifar10 is supported. cifar100 was planned but is not implemented for the sake of simplicity
+# lr, min_lr, batchsize and mcbn_iters are chosen based on the original tensorflow implementation,
+# if not mentioned with other values in the paper
+# original tensorflow implementation: https://github.com/tensorflow/models/tree/a2b2088c52635b86f4a2ac70391118b9419b3c55/research/resnet
 lr = 0.1
 min_lr = 0.0001
 epochs = 200
 batchsize = 32
 mcbn_iters = 128
-mcbn_test_sample_count = 10000  # mcbn evaluation is extremely slow, reducing the sample count can speed it up
+mcbn_test_sample_count = 10000  # mcbn evaluation was extremely slow, but with the improved algorithm it's ok to set this high
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+device = 'cuda' if torch.cuda.is_available() else 'cpu'  # cpu is untested
 criterion = nn.CrossEntropyLoss()
 
-# model = models.ResNet(BasicBlock, [3, 4, 6, 3], num_classes=10)  # resnet34
+# model = models.ResNet(BasicBlock, [3, 4, 6, 3], num_classes=10)  # resnet34, should work out of the box
 model = resnet32()
 print(model)
 
@@ -69,21 +72,21 @@ def evaluate():
     test_loss = 0
     correct = 0
     total = 0
+    NLL = 0
     with torch.no_grad():
         for batch_idx, (inputs, targets) in enumerate(tqdm(test_loader)):
             inputs, targets = inputs.to(device), targets.to(device)
             outputs = model(inputs)
+            outputs = torch.softmax(outputs, dim=1)
             loss = criterion(outputs, targets)
 
             test_loss += loss.item()
             _, predicted = outputs.max(1)
             total += targets.size(0)
             correct += predicted.eq(targets).sum().item()
+            NLL -= np.log([outputs[x][targets[x]].item() for x in range(batchsize)]).sum()
 
-    return correct / total
-
-
-
+    return correct / total, NLL / total
 
 
 def get_bn_params(eval_model):
@@ -119,6 +122,7 @@ def evaluate_mcbn():
     eval_model = copy.deepcopy(model)
     eval_model.eval()
 
+    # setup required variables
     mcbn_test_dataloader = DataLoader(test_loader.dataset, batch_size=batchsize, shuffle=False, num_workers=4, drop_last=True)
     bn_std_var_buffer = get_bn_params(eval_model)
     mcbn_samples_count = min(len(mcbn_test_dataloader) * batchsize, mcbn_test_sample_count)
@@ -128,9 +132,11 @@ def evaluate_mcbn():
         sys.exit(1)
     mcbn_results = torch.zeros((mcbn_samples_count, mcbn_iters, 10))  # this will collect the raw mcbn_samples tensors for all frames
     mcbn_targets = torch.zeros(mcbn_samples_count)
+
+    # generate mcbn samples (aka run the network)
     for batch_idx, (eval_input, eval_target) in enumerate(tqdm(mcbn_test_dataloader)):
         mcbn_samples = torch.zeros((batchsize, mcbn_iters, 10))
-        for batch_iter in range(mcbn_iters):
+        for mcbn_iter in range(mcbn_iters):
             # set bn mean/std to the values of a random precalculated values
             bn_params = random.choice(bn_std_var_buffer)
             bn_params_index = 0
@@ -148,12 +154,12 @@ def evaluate_mcbn():
                 outputs = eval_model(inputs)
 
             for sample_of_cur_batch in range(len(outputs)):
-                mcbn_samples[sample_of_cur_batch][batch_iter] = torch.softmax(outputs[sample_of_cur_batch], dim=0)
+                mcbn_samples[sample_of_cur_batch][mcbn_iter] = torch.softmax(outputs[sample_of_cur_batch], dim=0)
 
-        for batch_iter in range(batchsize):
-            total_iter = batch_idx * batchsize + batch_iter
-            mcbn_results[total_iter] = mcbn_samples[batch_iter]
-            mcbn_targets[total_iter] = eval_target[batch_iter]
+        for mcbn_iter in range(batchsize):
+            total_iter = batch_idx * batchsize + mcbn_iter
+            mcbn_results[total_iter] = mcbn_samples[mcbn_iter]
+            mcbn_targets[total_iter] = eval_target[mcbn_iter]
 
         if (batch_idx + 1) * batchsize == mcbn_samples_count:
             # early stopping if mcbn_test_sample_count is less than the test sample count
@@ -161,14 +167,14 @@ def evaluate_mcbn():
 
     # calculate metrics
     summed_probs = torch.zeros((mcbn_samples_count, 10))
-    for batch_iter in range(mcbn_iters):
+    for mcbn_iter in range(mcbn_iters):
         tp = 0
         NLL = 0
         for sample_of_cur_batch in range(mcbn_samples_count):
             # calc.py metrics (https://github.com/icml-mcbn/mcbn/blob/master/code/cifar10)
-            summed_probs[sample_of_cur_batch] += mcbn_results[sample_of_cur_batch][batch_iter]
+            summed_probs[sample_of_cur_batch] += mcbn_results[sample_of_cur_batch][mcbn_iter]
 
-            probs_cur = summed_probs / (batch_iter + 1)
+            probs_cur = summed_probs / (mcbn_iter + 1)
             pred = probs_cur[sample_of_cur_batch].topk(1)[1].item()
             tp += pred == mcbn_targets[sample_of_cur_batch]
             NLL -= np.log(probs_cur[sample_of_cur_batch][int(mcbn_targets[sample_of_cur_batch])].item())
@@ -177,11 +183,11 @@ def evaluate_mcbn():
         # the gaussian calculations part is not required to iterate over every single iteration like the clac.py metrics
         # so they can be skipped if they are not printed
         # Will be executed at iteration 2^iteration and last iteration (1,2,4,8,...)
-        if (batch_iter + 1) in [2 ** x for x in range(math.ceil(math.log2(mcbn_iters)))] + [mcbn_iters]:
+        if (mcbn_iter + 1) in [2 ** x for x in range(math.ceil(math.log2(mcbn_iters)))] + [mcbn_iters]:
             # crps & gaussian_nll
-            mean = np.array([sample[:batch_iter + 1].mean(axis=0).numpy() for sample in mcbn_results])
-            if batch_iter > 0:  # cant calculate std for only one sample
-                std = np.array([sample[:batch_iter + 1].std(axis=0).numpy() for sample in mcbn_results])
+            mean = np.array([sample[:mcbn_iter + 1].mean(axis=0).numpy() for sample in mcbn_results])
+            if mcbn_iter > 0:  # cant calculate std for only one sample
+                std = np.array([sample[:mcbn_iter + 1].std(axis=0).numpy() for sample in mcbn_results])
                 std = np.maximum(std, 1e-20)  # prevent division by zero in ps.crps_gaussian
                 crps = np.mean(ps.crps_gaussian(
                     torch.stack([torch.nn.functional.one_hot(i.long(), 10) for i in mcbn_targets]),  # labels onehot encoded
@@ -196,7 +202,7 @@ def evaluate_mcbn():
             else:
                 crps, gaussian_nll1, gaussian_nll2 = 0, 0, 0
 
-            print(f"mcbn_iters: {batch_iter + 1}: "
+            print(f"mcbn_iters: {mcbn_iter + 1}: "
                   f"tp: {(tp / mcbn_samples_count * 100) : .2f}%, "
                   f"NLL sum: {NLL : .2f}, "
                   f"NLL avg: {NLL / mcbn_samples_count : .2f}, "
@@ -210,17 +216,14 @@ def evaluate_mcbn():
 def main():
     for epoch in range(0, epochs):
         train_acc = train()
-        test_acc = evaluate()
+        test_acc, avg_nll = evaluate()
         print(f"\r[{epoch + 1}/{epochs}] "
-              f"train_acc: {train_acc * 100 :3.2f}%, "
-              f"test_acc: {test_acc * 100:3.2f}%, "
-              f"lr: {optimizer.param_groups[0]['lr'] :.4f}")
+              f"train_acc: {train_acc * 100 : 3.2f}%, "
+              f"test_acc: {test_acc * 100 : 3.2f}%, "
+              f"avg NLL: {avg_nll : .2f} "
+              f"lr: {optimizer.param_groups[0]['lr'] : .4f}")
         if epoch + 1 == epochs or (epoch + 1) % 10 == 0:
             test_acc = evaluate_mcbn()
-            print(f"\r[{epoch + 1}/{epochs}] "
-                  f"train_acc: {train_acc * 100 :3.2f}%, "
-                  f"test_acc: {test_acc * 100:3.2f}%, "
-                  f"lr: {optimizer.param_groups[0]['lr'] :.4f}")
 
 
 if __name__ == '__main__':
